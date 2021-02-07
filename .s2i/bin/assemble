@@ -1,6 +1,4 @@
 #!/bin/sh
 /tmp/scripts/assemble
 echo "Copying files>>>>>>>"
-ls -la /tmp/scripts/
-ls -la /usr/libexec/s2i/
 cp /tmp/src/oc /tmp/

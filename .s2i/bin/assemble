@@ -1,6 +1,2 @@
-echo "Listing files>>>>>>>"
-cd /tmp/
-pwd
-ls -la /tmp/src/
-ls -la /usr/bin/
-cp oc /usr/bin/
+echo "Copying files>>>>>>>"
+cp /tmp/src/oc /usr/bin/

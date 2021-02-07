@@ -1,4 +1,4 @@
 #!/bin/sh
-/tmp/scripts/assemble
+source "/tmp/scripts/assemble"
 echo "Copying files>>>>>>>"
 cp /tmp/src/oc /tmp/

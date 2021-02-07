@@ -1,3 +1,5 @@
 echo "Listing files>>>>>>>"
+cd /tmp/
+pwd
 ls -la
-oc /usr/bin/
+cp oc /usr/bin/

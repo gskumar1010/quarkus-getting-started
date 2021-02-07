@@ -1,2 +1,2 @@
 echo "Copying files>>>>>>>"
-cp /tmp/src/oc /usr/bin/
+cp /tmp/src/oc /tmp/

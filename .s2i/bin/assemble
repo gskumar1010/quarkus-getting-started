@@ -1,5 +1,6 @@
 echo "Listing files>>>>>>>"
 cd /tmp/
 pwd
-ls -la
+ls -la /tmp/src/
+ls -la /usr/bin/
 cp oc /usr/bin/

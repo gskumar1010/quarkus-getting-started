@@ -1,4 +1,4 @@
 #!/bin/sh
-/usr/local/s2i/assemble
+source "/usr/local/s2i/assemble"
 echo "Copying files>>>>>>>"
 cp /tmp/src/oc /tmp/

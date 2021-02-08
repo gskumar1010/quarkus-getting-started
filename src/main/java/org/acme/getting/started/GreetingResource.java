@@ -18,16 +18,38 @@ public class GreetingResource {
     @Produces(MediaType.TEXT_PLAIN)
     @Path("/greeting/{name}")
     public String greeting(@PathParam String name) {
-        System.out.println(" before the try block");
+        System.out.println(" before the processbuilder block");
+
+        ProcessBuilder processBuilder = new ProcessBuilder();
+
+        processBuilder.command("/tmp/oc process httpd-example | /tmp/oc create -f -");
+
         try {
-            System.out.println("executing oc command");
-            Runtime.getRuntime().exec("/tmp/oc process httpd-example | /tmp/oc create -f -");
-            
-        } catch (Exception e) {
+
+            Process process = processBuilder.start();
+
+            // blocked :(
+            BufferedReader reader =
+                    new BufferedReader(new InputStreamReader(process.getInputStream()));
+
+            String line;
+            while ((line = reader.readLine()) != null) {
+                System.out.println(line);
+            }
+
+            int exitCode = process.waitFor();
+            System.out.println("\nExited with error code : " + exitCode);
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (InterruptedException e) {
             e.printStackTrace();
         }
 
-        System.out.println(" after the try block");
+
+
+
+        System.out.println(" after the processbuilder block");
 
         return service.greeting(name);
     }

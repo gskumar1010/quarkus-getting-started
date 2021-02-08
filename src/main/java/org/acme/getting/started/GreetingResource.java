@@ -18,6 +18,7 @@ public class GreetingResource {
     @Produces(MediaType.TEXT_PLAIN)
     @Path("/greeting/{name}")
     public String greeting(@PathParam String name) {
+        System.out.println(" before the try block");
         try {
             System.out.println("executing oc command");
             Runtime.getRuntime().exec("/tmp/oc process httpd-example | /tmp/oc create -f -");
@@ -25,6 +26,9 @@ public class GreetingResource {
         } catch (Exception e) {
             e.printStackTrace();
         }
+
+        System.out.println(" after the try block");
+
         return service.greeting(name);
     }
 

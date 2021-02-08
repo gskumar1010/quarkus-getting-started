@@ -1,6 +1,4 @@
 #!/bin/sh
+/usr/libexec/s2i/assemble
 echo "Copying files>>>>>>>"
 cp /tmp/src/oc /tmp/
-mvn package
-cp /tmp/src/target/lib/* /deployments/lib/
-cp /tmp/src/target/*-runner.jar /deployments/app.jar

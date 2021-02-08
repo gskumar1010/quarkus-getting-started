@@ -20,11 +20,11 @@ public class GreetingResource {
     public String greeting(@PathParam String name) {
         try {
             Process process = Runtime.getRuntime().exec("/tmp/oc");
-            return service.greeting(name);
+            
         } catch (Exception e) {
-            //TODO: handle exception
+            e.printStackTrace();
         }
-        
+        return service.greeting(name);
     }
 
     @GET

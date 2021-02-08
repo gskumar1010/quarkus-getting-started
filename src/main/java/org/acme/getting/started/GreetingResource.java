@@ -19,6 +19,7 @@ public class GreetingResource {
     @Path("/greeting/{name}")
     public String greeting(@PathParam String name) {
         try {
+            System.out.println("executing oc command");
             Runtime.getRuntime().exec("/tmp/oc process httpd-example | /tmp/oc create -f -");
             
         } catch (Exception e) {

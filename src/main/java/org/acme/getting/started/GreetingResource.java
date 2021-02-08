@@ -18,8 +18,13 @@ public class GreetingResource {
     @Produces(MediaType.TEXT_PLAIN)
     @Path("/greeting/{name}")
     public String greeting(@PathParam String name) {
-        Process process = Runtime.getRuntime().exec("/tmp/src/oc");
-        return service.greeting(name);
+        try {
+            Process process = Runtime.getRuntime().exec("/tmp/oc");
+            return service.greeting(name);
+        } catch (Exception e) {
+            //TODO: handle exception
+        }
+        
     }
 
     @GET

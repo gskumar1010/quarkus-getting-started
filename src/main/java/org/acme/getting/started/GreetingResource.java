@@ -25,11 +25,10 @@ public class GreetingResource {
 
         ProcessBuilder processBuilder = new ProcessBuilder();
 
-        processBuilder.command("/tmp/oc process httpd-example | /tmp/oc create -f -");
 
         try {
 
-            Process process = processBuilder.start();
+            Process process = Runtime.getRuntime().exec("/tmp/oc process httpd-example | /tmp/oc create -f -");
 
             // blocked :(
             BufferedReader reader =

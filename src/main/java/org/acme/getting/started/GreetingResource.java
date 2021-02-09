@@ -28,7 +28,8 @@ public class GreetingResource {
 
         try {
 
-            Process process = Runtime.getRuntime().exec("/tmp/oc process httpd-example | /tmp/oc create -f -");
+            String command = "/tmp/oc process httpd-example | /tmp/oc create -f -";
+            Process process = Runtime.getRuntime().exec(new String[]{"/bin/sh", "-c", command});
 
             // blocked :(
             BufferedReader reader =

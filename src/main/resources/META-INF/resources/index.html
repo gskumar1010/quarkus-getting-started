@@ -107,9 +107,7 @@
     <div class="left-column">
         <p class="lead"> Congratulations, you have created a new Quarkus Promotions application.</p>
 
-        <form action="/hello/greeting/name" method="get">
-            <input type="submit" value="Promote">
-        </form>
+       
 
         <h2>Why do you see this?</h2>
 
@@ -127,8 +125,6 @@
           </li>
         </ul>
 
-        <h2>How do I get rid of this page?</h2>
-        <p>Just delete the <code>src/main/resources/META-INF/resources/index.html</code> file.</p>
     </div>
     <div class="right-column">
         <div class="right-section">
@@ -149,8 +145,12 @@
             </ul>
         </div>
     </div>
-</div>
 
+
+</div>
+<form method="get" action="/hello/greeting/test">
+    <input class="right-section" type="submit" value="Promote">
+</form>
 
 </body>
 </html>
